@@ -1,7 +1,7 @@
 {
   "name": "wa-sqlite-orm",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "This is a small and simple ORM wrapper for the wa-sqlite library using the OPFS API.",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc"
@@ -12,5 +12,20 @@
   "devDependencies": {
     "typescript": "^5.5.3"
   },
-  "private": true
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkluske/wa-sqlite-orm.git"
+  },
+  "keywords": [
+    "orm",
+    "wa-sqlite",
+    "wrapper"
+  ],
+  "author": "dkluske",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/dkluske/wa-sqlite-orm/issues"
+  },
+  "homepage": "https://github.com/dkluske/wa-sqlite-orm#readme"
 }
