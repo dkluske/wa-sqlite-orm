@@ -27,6 +27,8 @@ export abstract class Table<T> {
 
             if (isId && primaryExists) {
                 throw new Error(`Entity ${entity.constructor.name} has multiple primary keys`);
+            } else if (isId) {
+                primaryExists = true;
             }
 
             let columnDef = `${prop} ${sqlType}`;
