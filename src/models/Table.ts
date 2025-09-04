@@ -61,4 +61,8 @@ export abstract class Table<T, I> {
     insert(entity: T): I | undefined {
         return undefined;
     }
+
+    deleteById(id: I): void {
+
+    }
 }
