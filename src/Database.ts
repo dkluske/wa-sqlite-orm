@@ -1,12 +1,21 @@
 import {Table} from "./models/Table";
-import "reflect-metadata"
+import "reflect-metadata";
 
-function createTable(table: Table) {
-    let entity = table.entity;
-
-
-
-    let sql = `CREATE TABLE IF NOT EXISTS ${table.name} (
-        
-    )`;
+function typeToSql(ctor: Function): string {
+    switch (ctor) {
+        case Number:
+            return "INTEGER"; // could be REAL for floats; simplified
+        case String:
+            return "TEXT";
+        case Boolean:
+            return "INTEGER"; // 0/1
+        case Date:
+            return "INTEGER"; // store as epoch millis (or TEXT ISO)
+        default:
+            return "TEXT"; // fallback
+    }
 }
+
+
+
+export { typeToSql };
