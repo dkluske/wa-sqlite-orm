@@ -1,6 +1,10 @@
 import {typeToSql} from "../Database";
 
-export abstract class Table<T> {
+/**
+ * T:Entity
+ * I:any id object
+ */
+export abstract class Table<T, I> {
     name: string;
     entity: T;
 
@@ -44,5 +48,17 @@ export abstract class Table<T> {
         const sql = `CREATE TABLE IF NOT EXISTS ${this.name} (\n        ${columns.join(",\n        ")}\n    )`;
 
         return sql;
+    }
+
+    selectAll(): T[] {
+        return [];
+    }
+
+    selectById(id: I): T | undefined {
+        return undefined;
+    }
+
+    insert(entity: T): I | undefined {
+        return undefined;
     }
 }
